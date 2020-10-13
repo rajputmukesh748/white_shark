@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 
-class Permissions(
+class ActivityPermissions(
     private var activity: Activity,
     private var onPermissionListener: OnPermissionListener
 ) {
