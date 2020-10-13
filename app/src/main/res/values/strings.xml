@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">White Shark</string>
+    <string name="view_model_not_find">View model not find.</string>
 </resources>

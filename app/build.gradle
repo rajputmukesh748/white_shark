@@ -47,22 +47,33 @@ android {
 def constraint_version = "2.0.2"
 def life_versions = "1.1.1"
 def data_binging_compiler = "3.2.0-alpha10"
-def permissions_check = ""
+def dimensions_version = "1.0.6"
 
 dependencies {
-
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
+
+    //Recycler View
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
     //Constraint Layout
     //noinspection GradleDependency
     implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+
     //Life Cycle Extension
     implementation "android.arch.lifecycle:extensions:$life_versions"
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+
     //noinspection LifecycleAnnotationProcessorWithJava8
     kapt "android.arch.lifecycle:compiler:$life_versions"
     kapt "com.android.databinding:compiler:$data_binging_compiler"
 
+    //Dimensions according to screen size handle automatically
+    implementation "com.intuit.sdp:sdp-android:$dimensions_version"
+
+    //Navigation Fragment Graph
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
 
 }
