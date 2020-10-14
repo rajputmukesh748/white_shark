@@ -1,7 +1,7 @@
 # Permission Handler in android
 # Mukesh Rajput
 
-Hello Friends\n
+Hello Friends </br>
 Mostly new developers not used a proper runtime permission and not handle it.Overcome this issue create a new library is Permission library.
 You can just create a valiable for permission class and override a permssion response handle and in onRequestPermissionsResult overide method call a {permission_class_variable}.onRequestPermissionsResult.
 
