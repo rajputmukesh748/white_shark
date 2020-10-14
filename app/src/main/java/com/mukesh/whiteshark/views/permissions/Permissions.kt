@@ -3,8 +3,9 @@ package com.mukesh.whiteshark.views.permissions
 import android.app.Activity
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
 
-class ActivityPermissions(
+class Permissions(
     private var activity: Activity,
     private var onPermissionListener: OnPermissionListener
 ) {
@@ -32,6 +33,25 @@ class ActivityPermissions(
 
         } catch (e: Exception) {
             e.printStackTrace()
+        }
+    }
+
+
+    //Request Fragment Permission
+    fun request(fragment: Fragment, vararg permissions: String) {
+
+        val permissionNeeded: MutableList<String> = ArrayList()
+
+        for (permission in permissions) {
+
+            if (ActivityCompat.checkSelfPermission(activity, permission)
+                != PackageManager.PERMISSION_GRANTED
+            ) {
+                permissionNeeded.add(permission)
+            }
+        }
+        if (permissionNeeded.size > 0) {
+            fragment.requestPermissions(permissionNeeded.toTypedArray(), 10002)
         }
     }
 

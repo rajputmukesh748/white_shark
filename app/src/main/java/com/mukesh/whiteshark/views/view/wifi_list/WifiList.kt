@@ -11,7 +11,7 @@ import com.mukesh.whiteshark.databinding.WifiListBinding
 class WifiList : Fragment() {
 
     private lateinit var wifiListBinding: WifiListBinding
-    private val wifiListFactory by lazy { WifiListFactory(requireContext()) }
+    private val wifiListFactory by lazy { WifiListFactory(requireContext(), this) }
     private val wifiListViewModel by lazy {
         ViewModelProvider(this, wifiListFactory).get(
             WifiListViewModel::class.java
@@ -19,6 +19,10 @@ class WifiList : Fragment() {
     }
 
 
+    /**
+     * onCreateView Method Call
+     * Initialize binding
+     * */
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,8 +33,46 @@ class WifiList : Fragment() {
     }
 
 
+    /**
+     * onViewCreated Method Call
+     * for initialize view model
+     * */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         wifiListBinding.wifiListVM = wifiListViewModel
     }
+
+
+    /**
+     * Start Method Call
+     * for register receiver
+     * */
+    override fun onStart() {
+        super.onStart()
+        wifiListViewModel.registerReceiver()
+    }
+
+
+    /**
+     * Stop Method Call
+     * for unregister receiver
+     * */
+    override fun onStop() {
+        super.onStop()
+        wifiListViewModel.unregisterReceiver()
+    }
+
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        wifiListViewModel.permission.onRequestPermissionsResult(
+            permissions.toList(),
+            grantResults.toList()
+        )
+    }
+
 }
