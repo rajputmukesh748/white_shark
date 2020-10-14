@@ -23,4 +23,5 @@ class MainPage : AppCompatActivity() {
         mainPageBinding.mainPageVM = mainPageViewModel
     }
 
+
 }

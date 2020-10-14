@@ -1,4 +1,4 @@
-package com.mukesh.whiteshark.views.permissions
+package com.test.permissions.permissions
 
 interface OnPermissionListener {
 

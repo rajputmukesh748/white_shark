@@ -43,25 +43,6 @@ class WifiList : Fragment() {
     }
 
 
-    /**
-     * Start Method Call
-     * for register receiver
-     * */
-    override fun onStart() {
-        super.onStart()
-        wifiListViewModel.registerReceiver()
-    }
-
-
-    /**
-     * Stop Method Call
-     * for unregister receiver
-     * */
-    override fun onStop() {
-        super.onStop()
-        wifiListViewModel.unregisterReceiver()
-    }
-
 
     override fun onRequestPermissionsResult(
         requestCode: Int,

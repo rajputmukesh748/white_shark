@@ -47,7 +47,6 @@ android {
 def constraint_version = "2.0.2"
 def life_versions = "1.1.1"
 def data_binging_compiler = "3.2.0-alpha10"
-def dimensions_version = "1.0.6"
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -70,9 +69,6 @@ dependencies {
     //noinspection LifecycleAnnotationProcessorWithJava8
     kapt "android.arch.lifecycle:compiler:$life_versions"
     kapt "com.android.databinding:compiler:$data_binging_compiler"
-
-    //Dimensions according to screen size handle automatically
-    implementation "com.intuit.sdp:sdp-android:$dimensions_version"
 
     //Navigation Fragment Graph
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
