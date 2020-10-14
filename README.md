@@ -11,6 +11,7 @@ You can see all error and permissions are handled in grant permission or reject 
 
 
     //Check Permission and handle a call backs
+    //Must need to import that otherwise its not working :-  import com.test.permissions.permissions.Permissions
     
     val permission = Permissions(context as Activity,
         object : OnPermissionListener {
