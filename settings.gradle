@@ -1,2 +1,3 @@
+include ':Permissions'
 include ':app'
 rootProject.name = "White Shark"

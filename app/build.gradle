@@ -65,6 +65,7 @@ dependencies {
     //Life Cycle Extension
     implementation "android.arch.lifecycle:extensions:$life_versions"
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    implementation project(path: ':Permissions')
 
     //noinspection LifecycleAnnotationProcessorWithJava8
     kapt "android.arch.lifecycle:compiler:$life_versions"
