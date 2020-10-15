@@ -130,7 +130,7 @@ You can see all error and permissions are handled in grant permission or reject 
  
 <p>Add the dependency:</p>
 
-implementation 'com.github.rajputmukesh748:white_shark:1.2.0'
+implementation 'com.github.rajputmukesh748:white_shark:1.3.0'
 
 
 
