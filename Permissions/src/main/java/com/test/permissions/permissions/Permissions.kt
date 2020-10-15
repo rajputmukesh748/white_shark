@@ -5,6 +5,23 @@ import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 
+/**
+ * author {White Shark}
+ * author {Mukesh Rajput}
+ *
+ * Mostly new developers not used a proper runtime permission
+ * and not handle it.Overcome this issue create a new library
+ * is Permission library.You can just create a variable for permission
+ * class and override a permission response handle and in
+ * onRequestPermissionsResult override method call a
+ * {permission_class_variable}.onRequestPermissionsResult.
+ *
+ *
+ * Go to github and get a latest version of code
+ * implementation 'com.github.rajputmukesh748:white_shark:{latest_version_code}
+ *
+ * */
+
 class Permissions(
     private var activity: Activity,
     private var onPermissionListener: OnPermissionListener
@@ -16,11 +33,11 @@ class Permissions(
             val deniedPermission: ArrayList<String> = ArrayList()
 
             //Check All Permission and add in array list
-            for (item in grantResult.indices) {
-                if (item == PackageManager.PERMISSION_DENIED) {
-                    deniedPermission.add(permissions[grantResult.indexOf(item)])
+            for (i in permissions.indices) {
+                if (grantResult[i] == PackageManager.PERMISSION_GRANTED) {
+                    grantedPermission.add(permissions[i])
                 } else {
-                    grantedPermission.add(permissions[grantResult.indexOf(item)])
+                    deniedPermission.add(permissions[i])
                 }
             }
 
